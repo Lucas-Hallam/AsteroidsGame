@@ -9,7 +9,7 @@ boolean hyper;
 int astI;
 int numStars;
 public void setup() {
-  size(500, 500);
+  size(750, 750);
   astI = 0;
   background(0);
   numStars = 50 + (int)(25*Math.random());
@@ -28,6 +28,7 @@ public void draw() {
   if (hyper == true) {
     stars.clear();
     collidables.clear();
+    asteroids.clear();
     numStars = 50 + (int)(25*Math.random());
     for (int i = 0; i < numStars; i++) {
       Star star = new Star();
@@ -57,19 +58,43 @@ public void draw() {
     asteroids.get(i).move();
     asteroids.get(i).show();
   }
-  for (int i = 0; i < collidables.size(); i++) {
+  for (int i = collidables.size() - 1; i >= 0; i--) {
     collidables.get(i).move();
     collidables.get(i).show();
   }
+  for (int i = collidables.size() - 1; i > 0; i--) {
+    if (((Bullet) collidables.get(i)).getOutside()) {
+      collidables.remove(i);
+      i--;
+    }
+  }
+  for (int i = collidables.size() - 1; i >= 0; i--) {
+    if (collidables.get(i).getClass() == Spaceship.class) {
+      for (int j = asteroids.size() - 1; j >= 0; j--) {
+        if (collidables.get(i).collided(asteroids.get(j))) {
+          asteroids.remove(j);
+          // Add two small asteroids
+        }
+      }
+    //} else if (collidables.get(i).getClass() == Bullet.class){
+      //for (int j = asteroids.size() - 1; j >= 0; j--) {
+        //if (collidables.get(i).collided(asteroids.get(j))) {
+          //collidables.remove(i);
+          //asteroids.remove(j);
+          // Add two small asteroids
+        //}
+      //}
+    }
+  }
   astI++;
-  if (astI == 128) {
+  if (astI == 1000000000) {
     astI = 0;
   }
 }
 
-//public void mousePressed() {
-//((Spaceship) objects.get(0)).shoot();
-//}
+public void mousePressed() {
+  ((Spaceship) collidables.get(0)).shoot();
+}
 void keyPressed(KeyEvent e) {
   if (e.getKeyCode() == 10) {
     hyper = true;

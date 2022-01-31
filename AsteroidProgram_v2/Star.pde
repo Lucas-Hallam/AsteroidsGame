@@ -3,8 +3,8 @@ class Star {
   private float myX,myY,mySize;
   public Star() {
     c = color((float) (256*Math.random()), (float) (256*Math.random()), (float) (256*Math.random()));
-    myX = (float) (500*Math.random());
-    myY = (float) (500*Math.random());
+    myX = (float) (width*Math.random());
+    myY = (float) (height*Math.random());
     mySize = (float) (4*Math.random()+2);
   } 
   public void show() {

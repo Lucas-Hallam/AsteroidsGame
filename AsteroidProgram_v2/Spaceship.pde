@@ -21,10 +21,10 @@ class Spaceship extends AdFloater {
     yCorners[5] = 0;
     yCorners[6] = 8;
     yCorners[7] = 14;
-    myColor = color((float) 0,(float) 255,(float) 0);
+    myColor = color((float) 0, (float) 255, (float) 0);
     myXspeed = 0;
     myYspeed = 0;
-    //collisionRadius = maxDistance(xCorners, yCorners);
+    collisionRadius = maxDistance(xCorners, yCorners);
     if (random == false) {
       myCenterX = width/2;
       myCenterY = height/2;
@@ -35,15 +35,15 @@ class Spaceship extends AdFloater {
       myPointDirection = 360*Math.random();
     }
   }
-  //public void shoot() {
-  //newBullet = new Bullet(myCenterX+8*Math.cos(myPointDirection*PI/180)-14*Math.sin(myPointDirection*PI/180),
-  //myCenterY+8*Math.sin(myPointDirection*8*PI/180)-14*Math.cos(myPointDirection*-14*PI/180),
-  //myPointDirection);
-  //newBullet2 = new Bullet(myCenterX+8*Math.cos(myPointDirection*PI/180)-14*Math.sin(myPointDirection*PI/180),
-  //myCenterY+8*Math.sin(myPointDirection*PI/180)+14*Math.cos(myPointDirection*PI/180),
-  //myPointDirection);
-  //objects.add(newBullet);
-  //objects.add(newBullet2);
-  //shots++;
-  //}
+  public void shoot() {
+    newBullet = new Bullet(myCenterX+10*Math.cos(myPointDirection*PI/180)-13.5*Math.sin(myPointDirection*PI/180),
+      myCenterY+13.5*Math.cos(myPointDirection*PI/180)+10*Math.sin(myPointDirection*PI/180),
+      myPointDirection);
+    newBullet2 = new Bullet(myCenterX+10*Math.cos(myPointDirection*PI/180)+14.5*Math.sin(myPointDirection*PI/180),
+      myCenterY-14.5*Math.cos(myPointDirection*PI/180)+10*Math.sin(myPointDirection*PI/180),
+      myPointDirection);
+    collidables.add(newBullet);
+    collidables.add(newBullet2);
+    shots++;
+  }
 }
