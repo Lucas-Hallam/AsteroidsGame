@@ -6,7 +6,7 @@ int numAsts, astI, tickNum, numStars;
 double lives;
 Asteroid newAst;
 public void setup() {
-  size(750, 750);
+  size(500, 500);
   astI = 0;
   background(0);
   numAsts = 5;
