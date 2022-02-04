@@ -27,7 +27,7 @@ public void draw() {
   if (astI < tickNum*numAsts) {
     if (astI%tickNum == 0) {
       newAst = new Asteroid();
-    } else if (astI%tickNum == 160) {
+    } else if (astI%tickNum == 100) {
       asteroids.add(newAst);
     }
   }
