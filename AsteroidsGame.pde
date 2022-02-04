@@ -1,3 +1,5 @@
+ArrayList <Star> stars = new ArrayList <Star>();
+ArrayList <AdFloater> collidables = new ArrayList <AdFloater>();
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
 boolean rTurning, accelerating, lTurning, deccelerating, hyper, exists;
 int numAsts, astI, tickNum, numStars;
