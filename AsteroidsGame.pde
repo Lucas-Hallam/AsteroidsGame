@@ -14,7 +14,6 @@ public void setup() {
   exists = true;
   lives = 3;
   numStars = 50 + (int)(25*Math.random());
-  noStroke();
   for (int i = 0; i < numStars; i++) {
     Star star = new Star();
     stars.add(star);
@@ -37,7 +36,6 @@ public void draw() {
     stars.clear();
     collidables.clear();
     asteroids.clear();
-    noStroke();
     numStars = 50 + (int)(25*Math.random());
     for (int i = 0; i < numStars; i++) {
       Star star = new Star();
