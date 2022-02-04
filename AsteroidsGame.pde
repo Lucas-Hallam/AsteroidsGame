@@ -1,14 +1,14 @@
-ArrayList <Star> stars = new ArrayList <Star>();
-ArrayList <AdFloater> collidables = new ArrayList <AdFloater>();
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
 boolean rTurning, accelerating, lTurning, deccelerating, hyper, exists;
-int numAsts, astI, numStars;
+int numAsts, astI, tickNum, numStars;
 double lives;
+Asteroid newAst;
 public void setup() {
   size(750, 750);
   astI = 0;
   background(0);
   numAsts = 5;
+  tickNum = 200;
   exists = true;
   lives = 3;
   numStars = 50 + (int)(25*Math.random());
@@ -24,9 +24,10 @@ public void setup() {
   noStroke();
 }
 public void draw() {
-  if (astI < 128*numAsts) {
-    if (astI%128 == 0) {
-      Asteroid newAst = new Asteroid();
+  if (astI < tickNum*numAsts) {
+    if (astI%tickNum == 0) {
+      newAst = new Asteroid();
+    } else if (astI%tickNum == 160) {
       asteroids.add(newAst);
     }
   }
@@ -63,7 +64,7 @@ public void draw() {
   }
   for (int i = collidables.size() - 1; i >= 0; i--) {
     exists = true;
-    if (collidables.get(i).getClass() == Spaceship.class) {
+    if (i == 0) {
       for (int j = asteroids.size() - 1; j >= 0; j--) {
         if (collidables.get(i).collided(asteroids.get(j))) {
           if (asteroids.get(j).getClass() == Asteroid.class) {
@@ -79,7 +80,7 @@ public void draw() {
           lives -= 0.5;
         }
       }
-    } else if (collidables.get(i).getClass() == Bullet.class) {
+    } else if (i != 0) {
       for (int j = asteroids.size() - 1; j >= 0; j--) {
         if (exists == true) {
           if (collidables.get(i).collided(asteroids.get(j))) {
@@ -126,6 +127,9 @@ public void draw() {
   text("Lives: " + lives, width - 10, 40);
   strokeWeight(0);
   noStroke();
+  if (astI < tickNum*numAsts) {
+    newAst.showSpawn();
+  }
   for (int i = collidables.size() - 1; i >= 0; i--) {
     collidables.get(i).move();
     collidables.get(i).show();
@@ -140,7 +144,7 @@ public void draw() {
     text("Game Over", width/2, height/2);
     noLoop();
   }
-  if (astI > 128*numAsts) {
+  if (astI > tickNum*numAsts) {
     if (asteroids.size() == 0) {
       strokeWeight(30);
       textSize(50);
@@ -199,4 +203,3 @@ public double maxDistance(int[] a, int[] b) {
   }
   return max;
 }
-
