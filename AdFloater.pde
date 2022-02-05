@@ -1,4 +1,4 @@
-class AdFloater extends Floater {
+public class AdFloater extends Floater {
   protected double collisionRadius;
   public boolean collided(AdFloater f) {
     return (myCenterX - f.getX())*(myCenterX - f.getX())+
