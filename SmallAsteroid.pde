@@ -1,4 +1,4 @@
-class SmallAsteroid extends Asteroid {
+public class SmallAsteroid extends Asteroid {
   SmallAsteroid(double x, double y) {
     corners = 8;
     xCorners = new int[corners];
