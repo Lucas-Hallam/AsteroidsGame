@@ -1,6 +1,6 @@
 public class Asteroid extends AdFloater {
   protected double rotSpeed;
-  Asteroid() {
+  public Asteroid() {
     corners = 8;
     xCorners = new int[corners];
     yCorners = new int[corners];
