@@ -1,4 +1,4 @@
-class Asteroid extends AdFloater {
+public class Asteroid extends AdFloater {
   protected double rotSpeed;
   Asteroid() {
     corners = 8;
