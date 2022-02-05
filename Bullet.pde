@@ -1,6 +1,6 @@
 public class Bullet extends AdFloater {
   boolean outside;
-  Bullet(double centerX, double centerY, double shootDirection) {
+  public Bullet(double centerX, double centerY, double shootDirection) {
     corners = 4;
     outside = false;
     xCorners = new int[corners];
