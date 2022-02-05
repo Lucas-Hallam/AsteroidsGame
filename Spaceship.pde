@@ -1,4 +1,4 @@
-class Spaceship extends AdFloater {
+public class Spaceship extends AdFloater {
   protected int shots;
   protected Bullet newBullet, newBullet2;
   public Spaceship(boolean random) {
