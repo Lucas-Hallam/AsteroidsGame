@@ -65,7 +65,9 @@ public void draw() {
     collidables.get(0).turn(-3);
   }
   if (astI < tickNum*numAsts) {
-    newAst.showSpawn();
+    if (exists2 == true) {
+      newAst.showSpawn();
+    }
   }
   for (int i = 0; i < asteroids.size(); i++) {
     asteroids.get(i).move();
