@@ -39,10 +39,11 @@ public class Spaceship extends AdFloater {
     newBullet = new Bullet(myCenterX+10*Math.cos(myPointDirection*PI/180)-13.5*Math.sin(myPointDirection*PI/180),
       myCenterY+13.5*Math.cos(myPointDirection*PI/180)+10*Math.sin(myPointDirection*PI/180),
       myPointDirection);
+      newBullet.turn(myPointDirection);
     newBullet2 = new Bullet(myCenterX+10*Math.cos(myPointDirection*PI/180)+14.5*Math.sin(myPointDirection*PI/180),
       myCenterY-14.5*Math.cos(myPointDirection*PI/180)+10*Math.sin(myPointDirection*PI/180),
       myPointDirection);
-      noStroke();
+      newBullet2.turn(myPointDirection);
     collidables.add(newBullet);
     collidables.add(newBullet2);
     shots++;
