@@ -106,7 +106,7 @@ public void draw() {
       i--;
     }
   }
-
+  noStroke();
   for (int i = 0; i < asteroids.size(); i++) {
     asteroids.get(i).move();
     asteroids.get(i).show();
@@ -131,6 +131,7 @@ public void draw() {
     collidables.get(i).move();
     collidables.get(i).show();
   }
+  noStroke();
   if (astI < tickNum*numAsts) {
     newAst.showSpawn();
   }
