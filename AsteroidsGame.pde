@@ -64,12 +64,12 @@ public void draw() {
   if (lTurning == true) {
     collidables.get(0).turn(-3);
   }
+  if (astI < tickNum*numAsts) {
+    newAst.showSpawn();
+  }
   for (int i = 0; i < asteroids.size(); i++) {
     asteroids.get(i).move();
     asteroids.get(i).show();
-  }
-  if (astI < tickNum*numAsts) {
-    newAst.showSpawn();
   }
   for (int i = collidables.size() - 1; i >= 0; i--) {
     collidables.get(i).move();
