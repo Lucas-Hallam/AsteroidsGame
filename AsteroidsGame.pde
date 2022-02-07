@@ -99,7 +99,7 @@ public void draw() {
           if (collidables.get(i).collided(asteroids.get(j))) {
             collidables.remove(i);
             exists1 = false;
-            f (asteroids.get(j).getClass() == Asteroid.class) {
+            if (asteroids.get(j).getClass() == Asteroid.class) {
             SmallAsteroid sAsteroid1 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
             SmallAsteroid sAsteroid2 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
             SmallAsteroid sAsteroid3 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY(), Asteroid asteroids.get(j), SmallAsteroid sAsteroid1, SmallAsteroid sAsteroid2);
