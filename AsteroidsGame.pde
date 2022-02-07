@@ -165,7 +165,7 @@ public void draw() {
 public void mousePressed() {
   ((Spaceship) collidables.get(0)).shoot();
 }
-public void keyPressed(KeyEvent e) {
+public void onKeyPress(KeyEvent e) {
   if (e.getKeyCode() == 10) {
     hyper = true;
     astI = 0;
