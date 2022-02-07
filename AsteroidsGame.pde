@@ -80,15 +80,15 @@ public void draw() {
     if (i == 0) {
       for (int j = asteroids.size() - 1; j >= 0; j--) {
         if (collidables.get(i).collided(asteroids.get(j))) {
-          if (asteroids.get(j).getClass() == Asteroid.class) {
-            SmallAsteroid sAsteroid1 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
-            SmallAsteroid sAsteroid2 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
-            SmallAsteroid sAsteroid3 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY(), asteroids.get(j), sAsteroid1, sAsteroid2);
-            asteroids.add(sAsteroid1);
-            asteroids.add(sAsteroid2);
-            asteroids.add(sAsteroid3);
-            lives -= 0.5;
-          }
+          //if (asteroids.get(j).getClass() == Asteroid.class) {
+            //SmallAsteroid sAsteroid1 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
+            //SmallAsteroid sAsteroid2 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
+            //SmallAsteroid sAsteroid3 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY(), asteroids.get(j), sAsteroid1, sAsteroid2);
+            //asteroids.add(sAsteroid1);
+            //asteroids.add(sAsteroid2);
+            //asteroids.add(sAsteroid3);
+            //lives -= 0.5;
+          //}
           asteroids.remove(j);
           lives -= 0.5;
         }
@@ -99,20 +99,36 @@ public void draw() {
           if (collidables.get(i).collided(asteroids.get(j))) {
             collidables.remove(i);
             exists1 = false;
-            if (asteroids.get(j).getClass() == Asteroid.class) {
-              SmallAsteroid sAsteroid1 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
-              SmallAsteroid sAsteroid2 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
-              SmallAsteroid sAsteroid3 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY(), asteroids.get(j), sAsteroid1, sAsteroid2);
-              asteroids.add(sAsteroid1);
-              asteroids.add(sAsteroid2);
-              asteroids.add(sAsteroid3);
-            }
+            //if (asteroids.get(j).getClass() == Asteroid.class) {
+              //SmallAsteroid sAsteroid1 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
+              //SmallAsteroid sAsteroid2 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
+              //SmallAsteroid sAsteroid3 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY(), asteroids.get(j), sAsteroid1, sAsteroid2);
+              //asteroids.add(sAsteroid1);
+              //asteroids.add(sAsteroid2);
+              //asteroids.add(sAsteroid3);
+            //}
             asteroids.remove(j);
           }
         }
       }
     }
   }
+  strokeWeight(20);
+  textSize(20);
+  stroke(255, 255, 255);
+  fill(255, 255, 255);
+  textAlign(LEFT, LEFT);
+  text("CenterX: " + (int) collidables.get(0).getX(), 10, 20);
+  text("CenterY: " + (int) collidables.get(0).getY(), 10, 40);
+  text("PointDirection: " + (int) collidables.get(0).getDirection(), 10, 60);
+  text("myXspeed: " + (int) (10*collidables.get(0).getXSp()), 10, 80);
+  text("myYspeed: " + (int) (10*collidables.get(0).getYSp()), 10, 100);
+  textAlign(RIGHT, LEFT);
+  text("Shots: " + ((Spaceship) collidables.get(0)).getShots(), width - 10, 20);
+  text("Asteroids Left: " + asteroids.size(), width - 10, 60);
+  text("Lives: " + lives, width - 10, 40);
+  strokeWeight(0);
+  noStroke();
   astI++;
   if (lives == 0) {
     strokeWeight(30);
