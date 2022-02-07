@@ -64,6 +64,17 @@ public void draw() {
   if (lTurning == true) {
     collidables.get(0).turn(-3);
   }
+  for (int i = 0; i < asteroids.size(); i++) {
+    asteroids.get(i).move();
+    asteroids.get(i).show();
+  }
+  if (astI < tickNum*numAsts) {
+    newAst.showSpawn();
+  }
+  for (int i = collidables.size() - 1; i >= 0; i--) {
+    collidables.get(i).move();
+    collidables.get(i).show();
+  }
   for (int i = collidables.size() - 1; i >= 0; i--) {
     exists1 = true;
     if (i == 0) {
@@ -102,54 +113,6 @@ public void draw() {
       }
     }
   }
-  for (int i = collidables.size() - 1; i > 0; i--) {
-    if (((Bullet) collidables.get(i)).getOutside()) {
-      collidables.remove(i);
-      i--;
-    }
-  }
-  if (astI < tickNum*numAsts) {
-    if (exists2 == true) {
-      newAst.move();
-    }
-    newAst.showSpawn();
-  }
-  for (int i = 0; i < asteroids.size(); i++) {
-    asteroids.get(i).move();
-    asteroids.get(i).show();
-  }
-  
-  for (int i = collidables.size() - 1; i >= 0; i--) {
-    collidables.get(i).move();
-    collidables.get(i).show();
-  }
-  strokeWeight(20);
-  textSize(20);
-  stroke(255, 255, 255);
-  fill(255, 255, 255);
-  textAlign(LEFT, LEFT);
-  text("CenterX: " + (int) collidables.get(0).getX(), 10, 20);
-  text("CenterY: " + (int) collidables.get(0).getY(), 10, 40);
-  text("PointDirection: " + (int) collidables.get(0).getDirection(), 10, 60);
-  text("myXspeed: " + (int) (10*collidables.get(0).getXSp()), 10, 80);
-  text("myYspeed: " + (int) (10*collidables.get(0).getYSp()), 10, 100);
-  textAlign(RIGHT, LEFT);
-  text("Shots: " + ((Spaceship) collidables.get(0)).getShots(), width - 10, 20);
-  text("Asteroids Left: " + asteroids.size(), width - 10, 60);
-  text("Lives: " + lives, width - 10, 40);
-  strokeWeight(0);
-  noStroke();
-  if (astI < tickNum*numAsts) {
-    if (exists2 == true) {
-      newAst.move();
-    }
-    newAst.showSpawn();
-  }
-  for (int i = collidables.size() - 1; i >= 0; i--) {
-    collidables.get(i).move();
-    collidables.get(i).show();
-  }
-  
   astI++;
   if (lives == 0) {
     strokeWeight(30);
