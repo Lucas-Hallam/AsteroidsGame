@@ -54,8 +54,8 @@ public class Asteroid extends AdFloater {
   }  
   public void showSpawn()  //Draws the floater at the current position  
   {             
-    fill(myColor);   
-    stroke(myColor);    
+    fill(200);   
+    stroke(200);    
     
     //translate the (x,y) center of the ship to the correct position
     translate((float) myCenterX, (float) myCenterY);
