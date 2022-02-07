@@ -1,7 +1,7 @@
 ArrayList <Star> stars = new ArrayList <Star>();
 ArrayList <AdFloater> collidables = new ArrayList <AdFloater>();
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
-boolean rTurning, accelerating, lTurning, deccelerating, hyper, exists;
+boolean rTurning, accelerating, lTurning, deccelerating, hyper, exists1, exists2;
 int numAsts, astI, tickNum, numStars;
 double lives;
 Asteroid newAst;
@@ -11,7 +11,8 @@ public void setup() {
   background(0);
   numAsts = 5;
   tickNum = 200;
-  exists = true;
+  exists1 = true;
+  esists2 = true;
   lives = 3;
   numStars = 50 + (int)(25*Math.random());
   for (int i = 0; i < numStars; i++) {
@@ -30,6 +31,7 @@ public void draw() {
       newAst = new Asteroid();
     } else if (astI%tickNum == 100) {
       asteroids.add(newAst);
+      exists2 = false;
     }
   }
   if (hyper == true) {
@@ -63,7 +65,7 @@ public void draw() {
     collidables.get(0).turn(-3);
   }
   for (int i = collidables.size() - 1; i >= 0; i--) {
-    exists = true;
+    exists1 = true;
     if (i == 0) {
       for (int j = asteroids.size() - 1; j >= 0; j--) {
         if (collidables.get(i).collided(asteroids.get(j))) {
@@ -74,6 +76,7 @@ public void draw() {
             //asteroids.add(sAsteroid1);
             //asteroids.add(sAsteroid2);
             //asteroids.add(sAsteroid3);
+            //lives -= 0.5;
           //}
           asteroids.remove(j);
           lives -= 0.5;
@@ -81,18 +84,17 @@ public void draw() {
       }
     } else if (i != 0) {
       for (int j = asteroids.size() - 1; j >= 0; j--) {
-        if (exists == true) {
+        if (exists1 == true) {
           if (collidables.get(i).collided(asteroids.get(j))) {
             collidables.remove(i);
-            exists = false;
+            exists1 = false;
             //if (asteroids.get(j).getClass() == Asteroid.class) {
             //SmallAsteroid sAsteroid1 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
             //SmallAsteroid sAsteroid2 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
             //SmallAsteroid sAsteroid3 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY(), asteroids.get(j), sAsteroid1, sAsteroid2);
             //asteroids.add(sAsteroid1);
             //asteroids.add(sAsteroid2);
-            //asteroids.add(sAsteroid3);
-            //lives -= 0.5;
+            //asteroids.add(sAsteroid3); 
           //}
             asteroids.remove(j);
           }
@@ -127,15 +129,17 @@ public void draw() {
   text("Lives: " + lives, width - 10, 40);
   strokeWeight(0);
   noStroke();
+  if (astI < tickNum*numAsts) {
+    if (exists2 == true) {
+      newAst.move();
+    }
+    newAst.showSpawn();
+  }
   for (int i = collidables.size() - 1; i >= 0; i--) {
     collidables.get(i).move();
     collidables.get(i).show();
   }
-  noStroke();
-  if (astI < tickNum*numAsts) {
-    newAst.move();
-    newAst.showSpawn();
-  }
+  
   astI++;
   if (lives == 0) {
     strokeWeight(30);
