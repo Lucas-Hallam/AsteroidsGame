@@ -46,16 +46,7 @@ public class Bullet extends AdFloater {
       outside = true;
     }
   }
-  public double getX() {
-    return myCenterX;
-  }
-  public double getY() {
-    return myCenterY;
-  }
   public boolean getOutside() {
     return outside;
-  }
-  public double getRadius() {
-    return collisionRadius;
   }
 }
