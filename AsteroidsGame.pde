@@ -157,7 +157,7 @@ public void draw() {
 public void mousePressed() {
   ((Spaceship) collidables.get(0)).shoot();
 }
-void keyPressed(KeyEvent e) {
+public void keyPressed(KeyEvent e) {
   if (e.getKeyCode() == 10) {
     hyper = true;
     astI = 0;
@@ -178,7 +178,7 @@ void keyPressed(KeyEvent e) {
     }
   }
 }
-void keyReleased(KeyEvent e) {
+public void keyReleased(KeyEvent e) {
   if (e.getKeyCode() == 37) {
     lTurning = false;
   }
