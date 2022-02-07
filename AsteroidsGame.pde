@@ -164,7 +164,7 @@ void keyPressed(KeyEvent e) {
     lives = 3;
     loop();
   } else {
-    if (e.getKeyCode() == 'LEFT') {
+    if (e.getKeyCode() == 37) {
       lTurning = true;
     }
     if (e.getKeyCode() == 39) {
