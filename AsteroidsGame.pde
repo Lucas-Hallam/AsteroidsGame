@@ -127,12 +127,12 @@ public void draw() {
   text("Lives: " + lives, width - 10, 40);
   strokeWeight(0);
   noStroke();
-  if (astI < tickNum*numAsts) {
-    newAst.showSpawn();
-  }
   for (int i = collidables.size() - 1; i >= 0; i--) {
     collidables.get(i).move();
     collidables.get(i).show();
+  }
+  if (astI < tickNum*numAsts) {
+    newAst.showSpawn();
   }
   astI++;
   if (lives == 0) {
