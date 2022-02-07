@@ -192,6 +192,8 @@ public void keyReleased(KeyEvent e) {
     deccelerating = false;
   }
 }
+document.addEventListener('keydown', keyPressed);
+document.addEventListener('keyup', keyReleased);
 public double maxDistance(int[] a, int[] b) {
   double max = 0;
   for (int i = 0; i < a.length; i++) {
