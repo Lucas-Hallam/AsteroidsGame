@@ -158,22 +158,22 @@ public void mousePressed() {
   ((Spaceship) collidables.get(0)).shoot();
 }
 public void keyPressed() {
-  if (keyCode == 'return') {
+  if (keyCode == 10) {
     hyper = true;
     astI = 0;
     lives = 3;
     loop();
   } else {
-    if (keyCode == 'a') {
+    if (keyCode == 37) {
       lTurning = true;
     }
-    if (keyCode == 'd') {
+    if (keyCode == 39) {
       rTurning = true;
     }
-    if (keyCode == 's') {
+    if (keyCode == 38) {
       accelerating = true;
     }
-    if (keyCode == 'w') {
+    if (keyCode == 40) {
       deccelerating = true;
     }
   }
