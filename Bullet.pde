@@ -21,8 +21,6 @@ public class Bullet extends AdFloater {
     myYspeed = 8*Math.sin(shootDirection*PI/180);
     collisionRadius = maxDistance(xCorners, yCorners);
   }
-  public void turn(double degreesOfRotation) {
-  }
   public void accelerate(double dAmount) {
   }
   public void move ()   //move the floater in the current direction of travel
