@@ -156,23 +156,23 @@ public void draw() {
 public void mousePressed() {
   ((Spaceship) collidables.get(0)).shoot();
 }
-public void keyPressed(KeyEvent e) {
-  if (e.getKeyCode() == 'ENTER') {
+public void keyPressed() {
+  if (keyCode == 'ENTER') {
     hyper = true;
     astI = 0;
     lives = 3;
     loop();
   } else {
-    if (e.getKeyCode() == 'A') {
+    if (keyCode == 'A') {
       lTurning = true;
     }
-    if (e.getKeyCode() == 'D') {
+    if (keyCode == 'D') {
       rTurning = true;
     }
-    if (e.getKeyCode() == 'W') {
+    if (keyCode) == 'W') {
       accelerating = true;
     }
-    if (e.getKeyCode() == 'S') {
+    if (keyCode == 'S') {
       deccelerating = true;
     }
   }
