@@ -12,7 +12,7 @@ public void setup() {
   numAsts = 5;
   tickNum = 200;
   exists1 = true;
-  esists2 = true;
+  exists2 = true;
   lives = 3;
   numStars = 50 + (int)(25*Math.random());
   for (int i = 0; i < numStars; i++) {
