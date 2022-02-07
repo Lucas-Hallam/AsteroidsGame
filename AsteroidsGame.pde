@@ -104,6 +104,7 @@ public void draw() {
   }
   if (astI < tickNum*numAsts) {
     if (exists2 == true) {
+      newAst.move();
       newAst.showSpawn();
     }
   }
@@ -163,7 +164,7 @@ void keyPressed(KeyEvent e) {
     lives = 3;
     loop();
   } else {
-    if (e.getKeyCode() == 37) {
+    if (e.getKeyCode() == 'LEFT') {
       lTurning = true;
     }
     if (e.getKeyCode() == 39) {
