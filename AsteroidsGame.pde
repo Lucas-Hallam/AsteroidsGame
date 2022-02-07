@@ -83,7 +83,7 @@ public void draw() {
           //if (asteroids.get(j).getClass() == Asteroid.class) {
             //SmallAsteroid sAsteroid1 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
             //SmallAsteroid sAsteroid2 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
-            //SmallAsteroid sAsteroid3 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY(), asteroids.get(j), sAsteroid1, sAsteroid2);
+            //SmallAsteroid sAsteroid3 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY(), Asteroid asteroids.get(j), SmallAsteroid sAsteroid1, SmallAsteroid sAsteroid2);
             //asteroids.add(sAsteroid1);
             //asteroids.add(sAsteroid2);
             //asteroids.add(sAsteroid3);
@@ -102,7 +102,7 @@ public void draw() {
             //if (asteroids.get(j).getClass() == Asteroid.class) {
             //SmallAsteroid sAsteroid1 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
             //SmallAsteroid sAsteroid2 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY());
-            //SmallAsteroid sAsteroid3 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY(), asteroids.get(j), sAsteroid1, sAsteroid2);
+            //SmallAsteroid sAsteroid3 = new SmallAsteroid(asteroids.get(j).getX(), asteroids.get(j).getY(), Asteroid asteroids.get(j), SmallAsteroid sAsteroid1, SmallAsteroid sAsteroid2);
             //asteroids.add(sAsteroid1);
             //asteroids.add(sAsteroid2);
             //asteroids.add(sAsteroid3); 
