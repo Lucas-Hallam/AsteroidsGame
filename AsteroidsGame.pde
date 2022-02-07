@@ -79,7 +79,7 @@ public void draw() {
             //lives -= 0.5;
           //}
           asteroids.remove(j);
-          lives -= 0.5;
+          lives -= 1;
         }
       }
     } else if (i != 0) {
@@ -157,22 +157,22 @@ public void mousePressed() {
   ((Spaceship) collidables.get(0)).shoot();
 }
 public void keyPressed(KeyEvent e) {
-  if (e.getKeyCode() == 10) {
+  if (e.getKeyCode() == 'Enter') {
     hyper = true;
     astI = 0;
     lives = 3;
     loop();
   } else {
-    if (e.getKeyCode() == 37) {
+    if (e.getKeyCode() == 'Left') {
       lTurning = true;
     }
-    if (e.getKeyCode() == 39) {
+    if (e.getKeyCode() == 'Right') {
       rTurning = true;
     }
-    if (e.getKeyCode() == 38) {
+    if (e.getKeyCode() == 'Up') {
       accelerating = true;
     }
-    if (e.getKeyCode() == 40) {
+    if (e.getKeyCode() == 'Down') {
       deccelerating = true;
     }
   }
