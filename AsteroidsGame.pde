@@ -52,7 +52,7 @@ public void draw() {
   for (int i = 0; i < numStars; i++) {
     stars.get(i).show();
   }
-  if (accelerating == true) {
+  if (accelerating == false) {
     collidables.get(0).accelerate(0.05);
   }
   if (deccelerating == true) {
