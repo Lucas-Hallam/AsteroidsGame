@@ -15,7 +15,7 @@ public class Bullet extends AdFloater {
     yCorners[3] = 1;
     myCenterX = centerX;
     myCenterY = centerY;
-    myPointDirection = shootDirection;
+    myPointDirection = 0;
     myColor = color((float) 255, (float) 255, (float) 255);
     myXspeed = 8*Math.cos(shootDirection*PI/180);
     myYspeed = 8*Math.sin(shootDirection*PI/180);
