@@ -133,6 +133,7 @@ public void draw() {
   }
   noStroke();
   if (astI < tickNum*numAsts) {
+    newAst.move();
     newAst.showSpawn();
   }
   astI++;
