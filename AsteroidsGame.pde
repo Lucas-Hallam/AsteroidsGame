@@ -50,16 +50,16 @@ public void draw() {
   for (int i = 0; i < numStars; i++) {
     stars.get(i).show();
   }
-  if (accelerating) {
+  if (accelerating == true) {
     collidables.get(0).accelerate(0.05);
   }
-  if (deccelerating) {
+  if (deccelerating == true) {
     collidables.get(0).accelerate(-0.05);
   }
-  if (rTurning) {
+  if (rTurning == true) {
     collidables.get(0).turn(3);
   }
-  if (lTurning) {
+  if (lTurning == true) {
     collidables.get(0).turn(-3);
   }
   for (int i = collidables.size() - 1; i >= 0; i--) {
