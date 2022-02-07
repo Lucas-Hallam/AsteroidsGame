@@ -64,19 +64,6 @@ public void draw() {
   if (lTurning == true) {
     collidables.get(0).turn(-3);
   }
-  if (astI < tickNum*numAsts) {
-    if (exists2 == true) {
-      newAst.showSpawn();
-    }
-  }
-  for (int i = 0; i < asteroids.size(); i++) {
-    asteroids.get(i).move();
-    asteroids.get(i).show();
-  }
-  for (int i = collidables.size() - 1; i >= 0; i--) {
-    collidables.get(i).move();
-    collidables.get(i).show();
-  }
   for (int i = collidables.size() - 1; i >= 0; i--) {
     exists1 = true;
     if (i == 0) {
@@ -114,6 +101,19 @@ public void draw() {
         }
       }
     }
+  }
+  if (astI < tickNum*numAsts) {
+    if (exists2 == true) {
+      newAst.showSpawn();
+    }
+  }
+  for (int i = 0; i < asteroids.size(); i++) {
+    asteroids.get(i).move();
+    asteroids.get(i).show();
+  }
+  for (int i = collidables.size() - 1; i >= 0; i--) {
+    collidables.get(i).move();
+    collidables.get(i).show();
   }
   strokeWeight(20);
   textSize(20);
