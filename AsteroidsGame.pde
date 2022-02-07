@@ -113,6 +113,16 @@ public void draw() {
     asteroids.get(i).move();
     asteroids.get(i).show();
   }
+  if (astI < tickNum*numAsts) {
+    if (exists2 == true) {
+      newAst.move();
+    }
+    newAst.showSpawn();
+  }
+  for (int i = collidables.size() - 1; i >= 0; i--) {
+    collidables.get(i).move();
+    collidables.get(i).show();
+  }
   strokeWeight(20);
   textSize(20);
   stroke(255, 255, 255);
