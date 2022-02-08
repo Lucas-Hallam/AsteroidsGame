@@ -134,6 +134,7 @@ public void draw() {
       fill(255, 255, 255);
       textAlign(CENTER, CENTER);
       text("Game Over", width/2, height/2);
+      strokeWeight(0);
       noLoop();
     }
     if (astI > tickNum*numAsts) {
@@ -144,6 +145,7 @@ public void draw() {
         fill(255, 255, 255);
         textAlign(CENTER, CENTER);
         text("Victory!", width/2, height/2);
+        strokeWeight(0);
         noLoop();
       }
     }
