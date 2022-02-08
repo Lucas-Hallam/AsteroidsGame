@@ -30,7 +30,6 @@ public void setup() {
   stroke(255);
   strokeWeight(0);
   noStroke();
-  noLoop();
 }
 public void draw() {
   if (astI < tickNum*numAsts) {
@@ -166,7 +165,6 @@ public void mousePressed() {
     ((Spaceship) collidables.get(0)).shoot();
   } else {
     started = true;
-    loop();
   }
 }
 public void keyPressed() {
