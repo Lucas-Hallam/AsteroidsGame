@@ -1,7 +1,7 @@
 ArrayList <Star> stars = new ArrayList <Star>();
 ArrayList <AdFloater> collidables = new ArrayList <AdFloater>();
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
-boolean rTurning, accelerating, lTurning, deccelerating, hyper, exists1, exists2;
+boolean rTurning, accelerating, lTurning, deccelerating, hyper, exists1, exists2, started;
 int numAsts, astI, tickNum, numStars;
 double lives;
 Asteroid newAst;
@@ -13,6 +13,7 @@ public void setup() {
   tickNum = 200;
   exists1 = true;
   exists2 = true;
+  started = false;
   lives = 3;
   numStars = 50 + (int)(25*Math.random());
   for (int i = 0; i < numStars; i++) {
@@ -30,6 +31,7 @@ public void setup() {
   stroke(255);
   strokeWeight(0);
   noStroke();
+  noLoop();
 }
 public void draw() {
   if (astI < tickNum*numAsts) {
