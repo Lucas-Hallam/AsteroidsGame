@@ -31,7 +31,6 @@ public void setup() {
   stroke(255);
   strokeWeight(0);
   noStroke();
-  noLoop();
 }
 public void draw() {
   if (astI < tickNum*numAsts) {
@@ -163,10 +162,10 @@ public void draw() {
   }
 }
 public void mousePressed() {
-  if (started == true) {
-    ((Spaceship) collidables.get(0)).shoot();
-  } else {
+  if (started == false) {
     started = true;
+  } else {
+    ((Spaceship) collidables.get(0)).shoot();
   }
 }
 public void keyPressed() {
