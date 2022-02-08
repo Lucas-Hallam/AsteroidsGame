@@ -9,6 +9,7 @@ class Star {
   } 
   public void show() {
     fill(c);
+    stroke(c);
     ellipse(myX,myY,mySize,mySize);
   }
 }
