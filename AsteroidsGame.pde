@@ -21,6 +21,12 @@ public void setup() {
   }
   Spaceship ship = new Spaceship(false);
   collidables.add(ship);
+  strokeWeight(30);
+  textSize(50);
+  stroke(255, 255, 255);
+  fill(255, 255, 255);
+  textAlign(CENTER, CENTER);
+  text("Click to start" + ((Spaceship) collidables.get(0)).getShots(), width - 10, 20);
   stroke(255);
   strokeWeight(0);
   noStroke();
