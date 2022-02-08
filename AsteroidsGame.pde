@@ -30,6 +30,13 @@ public void draw() {
   background(0);
   if (started == false) {
     background(0);
+    strokeWeight(30);
+    textSize(50);
+    stroke(255, 255, 255);
+    fill(255, 255, 255);
+    textAlign(CENTER, CENTER);
+    text("Click to Start", width/2, height/2);
+    strokeWeight(0);
   } else {
     if (astI < tickNum*numAsts) {
       if (astI%tickNum == 0) {
